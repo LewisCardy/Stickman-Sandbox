@@ -28,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     public float airMultiplier;
     bool readyToJump;
 
+    private bool isJumping;
+
+
     private void Start() {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
@@ -48,12 +51,21 @@ public class PlayerMovement : MonoBehaviour
         } else {
             animator.SetBool("isRunning", false);
         }
-        if (grounded){
+        Debug.Log(grounded);
+        if (grounded == true){
             rb.drag = groundDrag;
+            animator.SetBool("isGrounded", true);
             animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", false);
         } else {
-            
-            animator.SetBool("isJumping", true);
+            animator.SetBool("isGrounded", false);
+            if (rb.velocity.y > 0){
+                animator.SetBool("isJumping", true);
+            }
+            if ((isJumping && rb.velocity.y < 0) || rb.velocity.y < -2){
+                animator.SetBool("isFalling", true);
+            }
+
             rb.drag = 0;
         }
         SpeedControl();
@@ -63,11 +75,12 @@ public class PlayerMovement : MonoBehaviour
     private void MyInput(){
         horizontalInput = Input.GetAxisRaw("Horizontal");
         
-
         if (Input.GetKey(jump) && readyToJump && grounded){
             readyToJump = false;
+            isJumping = true;
             Jump();
-            animator.SetBool("isJumping", true);
+            
+            
             Invoke(nameof(ResetJump), jumpCooldown);
         }
     }
@@ -94,9 +107,11 @@ public class PlayerMovement : MonoBehaviour
     private void Jump(){
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+
     }
 
     private void ResetJump(){
         readyToJump = true;
+        
     }
 } 
