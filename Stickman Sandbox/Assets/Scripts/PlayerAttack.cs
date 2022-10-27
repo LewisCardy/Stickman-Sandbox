@@ -30,28 +30,18 @@ public class PlayerAttack : MonoBehaviour
     //checks for attack input
     void AttackInput(){
         //when E is pressed
-        if (Input.GetKeyDown(KeyCode.E)){
-            Attack();
-            
-            //current game time
-            time = Time.time;
-            //time since button press
-            float deltaTime = time - timeLastPass;
-            
-            //checks to see if e was pressed more than once in a certain amount of time
-            if (deltaTime > 5.0f){
-                //if the key was pressed more than once cross animation after jab
-                timeLastPass = time;
-                animator.SetTrigger("Cross"); 
-            } else {
-                //jab animation if pressed once
-                animator.SetTrigger("Jab");
-            }
-            
+        if (Input.GetKeyDown(KeyCode.J)){
+            lightAttack();
+        } else if (Input.GetKeyDown(KeyCode.K)){
+            heavyAttack();
         }
     }
-    void Attack(){
+    void lightAttack(){
+        animator.SetTrigger("Jab");
+    }
 
+    void heavyAttack(){
+        animator.SetTrigger("Cross"); 
     }
 
 }
