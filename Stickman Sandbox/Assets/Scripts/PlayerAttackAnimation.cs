@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //The player attack script
-public class PlayerAttack : MonoBehaviour
+public class PlayerAttackAnimation : MonoBehaviour
 {
      Animator animator;
 

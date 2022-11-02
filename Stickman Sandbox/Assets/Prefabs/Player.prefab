@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &525350852
 Transform:
   m_ObjectHideFlags: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 512
-  radius: 1
+  radius: 0.25
   damage: 2
   isPlayer: 1
   isEnemy: 0
@@ -68,7 +68,7 @@ GameObject:
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1731479476
 Transform:
   m_ObjectHideFlags: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 512
-  radius: 1
+  radius: 0.25
   damage: 2
   isPlayer: 1
   isEnemy: 0
@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 7978529880693233244}
   - component: {fileID: 816402930}
   - component: {fileID: 219478682507370234}
+  - component: {fileID: 8488384869568640891}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -279,6 +280,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLastPass: 0
+--- !u!114 &8488384869568640891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066661947527159854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c8d0d646c6782d4b83cefbfec73c687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftArmAttackPoint: {fileID: 1731479475}
+  rightArmAttackPoint: {fileID: 7762327475446411615}
+  footAttackPoint: {fileID: 525350851}
 --- !u!1 &7762327475446411615
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +311,7 @@ GameObject:
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7088631382502434405
 Transform:
   m_ObjectHideFlags: 0
@@ -326,7 +342,7 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 512
-  radius: 1
+  radius: 0.25
   damage: 2
   isPlayer: 1
   isEnemy: 0
