@@ -31,17 +31,23 @@ public class PlayerAttack : MonoBehaviour
     void AttackInput(){
         //when E is pressed
         if (Input.GetKeyDown(KeyCode.J)){
-            lightAttack();
+            LightAttack();
         } else if (Input.GetKeyDown(KeyCode.K)){
-            heavyAttack();
+            HeavyAttack();
+        } else if (Input.GetKeyDown(KeyCode.L)){
+            Kick();
         }
     }
-    void lightAttack(){
+    void LightAttack(){
         animator.SetTrigger("Jab");
     }
 
-    void heavyAttack(){
+    void HeavyAttack(){
         animator.SetTrigger("Cross"); 
+    }
+
+    void Kick(){
+        animator.SetTrigger("Kick"); 
     }
 
 }
