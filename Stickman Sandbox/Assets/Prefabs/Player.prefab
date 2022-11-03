@@ -9,14 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 525350852}
-  - component: {fileID: 8471716133696975379}
+  - component: {fileID: 525350853}
   m_Layer: 8
   m_Name: Foot Attack Point
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &525350852
 Transform:
   m_ObjectHideFlags: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 6210054639951681825}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8471716133696975379
+--- !u!114 &525350853
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 512
-  radius: 0.25
+    m_Bits: 256
+  radius: 1
   damage: 2
   isPlayer: 1
   isEnemy: 0
@@ -61,14 +61,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1731479476}
-  - component: {fileID: 6169144536055633328}
+  - component: {fileID: 1731479477}
   m_Layer: 8
   m_Name: LH Attack Point
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1731479476
 Transform:
   m_ObjectHideFlags: 0
@@ -84,7 +84,7 @@ Transform:
   m_Father: {fileID: 5606733912516971276}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6169144536055633328
+--- !u!114 &1731479477
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 512
-  radius: 0.25
+    m_Bits: 256
+  radius: 1
   damage: 2
   isPlayer: 1
   isEnemy: 0
@@ -304,14 +304,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7088631382502434405}
-  - component: {fileID: 7380402119996319444}
+  - component: {fileID: 811452581}
   m_Layer: 8
   m_Name: RH Attack Point
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7088631382502434405
 Transform:
   m_ObjectHideFlags: 0
@@ -327,7 +327,7 @@ Transform:
   m_Father: {fileID: 8504309618062959118}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7380402119996319444
+--- !u!114 &811452581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,8 +341,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 512
-  radius: 0.25
+    m_Bits: 256
+  radius: 1
   damage: 2
   isPlayer: 1
   isEnemy: 0
