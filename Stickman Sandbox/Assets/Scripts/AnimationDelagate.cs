@@ -7,6 +7,12 @@ public class AnimationDelagate : MonoBehaviour
 
     public GameObject leftArmAttackPoint, rightArmAttackPoint, footAttackPoint;
 
+    void Start(){
+        leftArmAttackPoint.SetActive(false);
+        rightArmAttackPoint.SetActive(false);
+        footAttackPoint.SetActive(false);
+    }
+
     void leftArmAttackOn(){
         leftArmAttackPoint.SetActive(true);
     }

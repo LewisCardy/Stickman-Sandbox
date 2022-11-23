@@ -26,17 +26,17 @@ public class Attack : MonoBehaviour
             Debug.Log("ENEMY HIT");
             gameObject.SetActive(false);
 
-            if(isPlayer){
-                Vector3 hitFxPos = hit[0].transform.position;
-                hitFxPos.y += 1.3f;
+            // if(isPlayer){
+            //     Vector3 hitFxPos = hit[0].transform.position;
+            //     hitFxPos.y += 1.3f;
 
-                if(hit[0].transform.forward.x > 0){
-                    hitFxPos.x += 0.3f;
-                } else if(hit[0].transform.forward.x < 0){
-                    hitFxPos.x -= 0.3f;
-                }
-                Instantiate(hitFx, hitFxPos, Quaternion.identity);
-            }
+            //     if(hit[0].transform.forward.x > 0){
+            //         hitFxPos.x += 0.3f;
+            //     } else if(hit[0].transform.forward.x < 0){
+            //         hitFxPos.x -= 0.3f;
+            //     }
+            //     Instantiate(hitFx, hitFxPos, Quaternion.identity);
+            // }
         }
         
     }

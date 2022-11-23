@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 256
-  radius: 1
+    m_Bits: 512
+  radius: 0.25
   damage: 2
   isPlayer: 1
   isEnemy: 0
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 256
-  radius: 1
+    m_Bits: 512
+  radius: 0.25
   damage: 2
   isPlayer: 1
   isEnemy: 0
@@ -341,8 +341,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 256
-  radius: 1
+    m_Bits: 512
+  radius: 0.25
   damage: 2
   isPlayer: 1
   isEnemy: 0
