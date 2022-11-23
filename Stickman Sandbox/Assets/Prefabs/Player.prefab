@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 816402930}
   - component: {fileID: 219478682507370234}
   - component: {fileID: 8488384869568640891}
+  - component: {fileID: 4989378854052395782}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -279,7 +280,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363ec6ea16c81f6459882dc5d6498068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLastPass: 0
 --- !u!114 &8488384869568640891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +295,21 @@ MonoBehaviour:
   leftArmAttackPoint: {fileID: 1731479475}
   rightArmAttackPoint: {fileID: 7762327475446411615}
   footAttackPoint: {fileID: 525350851}
+--- !u!114 &4989378854052395782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066661947527159854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0efe12f7a5872f7499375ffa17c6a4f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwPoint: {fileID: 7762327475446411615}
+  cube: {fileID: 8278806569489773042, guid: f0c96c7f94b8b8c48aecdd6c0fae0665, type: 3}
+  force: 20
 --- !u!1 &7762327475446411615
 GameObject:
   m_ObjectHideFlags: 0

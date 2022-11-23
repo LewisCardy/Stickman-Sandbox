@@ -5,12 +5,8 @@ using UnityEngine;
 //The player attack script
 public class PlayerAttackAnimation : MonoBehaviour
 {
-     Animator animator;
-
-    private float timeBetweenPunches = 0.0f;
-    private float timeStamp;
-    public static float time;
-    public float timeLastPass = 0.0f;
+    Animator animator;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +32,8 @@ public class PlayerAttackAnimation : MonoBehaviour
             HeavyAttack();
         } else if (Input.GetKeyDown(KeyCode.L)){
             Kick();
+        } else if (Input.GetKeyDown(KeyCode.F)){
+            Throw();
         }
     }
     void LightAttack(){
@@ -50,4 +48,7 @@ public class PlayerAttackAnimation : MonoBehaviour
         animator.SetTrigger("Kick"); 
     }
 
+    void Throw(){
+        animator.SetTrigger("Throw");
+    }
 }
