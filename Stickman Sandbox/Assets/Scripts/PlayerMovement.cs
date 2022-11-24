@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isJumping; //if jumping
 
+    public float rotateSpeed = 1.0f; //rotation speed
+
 
 
 
@@ -102,10 +104,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (grounded){ //if on the ground move in the direction with the speed of the player
             rb.AddForce(moveDirection.normalized * speed, ForceMode.Force);
-            
+
         } else if (!grounded){ //if not on the ground move with direction but with an added multiplier to move faster in the air
             rb.AddForce(moveDirection.normalized * speed * airMultiplier, ForceMode.Force);
+
         }
+        //gameObject.transform.Rotate(0, horizontalInput * rotateSpeed, 0);
+
     }
 
     private void SpeedControl(){ //limits the players speed
