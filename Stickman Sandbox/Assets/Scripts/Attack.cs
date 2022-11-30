@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+    public Player player;
+    public Enemy enemy;
 
     public LayerMask collisionLayer;
     public float radius = 0.25f;
@@ -12,6 +14,8 @@ public class Attack : MonoBehaviour
     public bool isPlayer, isEnemy;
 
     public GameObject hitFx;
+    private bool playerHit;
+    private bool enemyHit;
 
     void Update()
     {
@@ -23,7 +27,7 @@ public class Attack : MonoBehaviour
         Collider[] hit = Physics.OverlapSphere(transform.position, radius, collisionLayer);
 
         if (hit.Length > 0){
-            Debug.Log("ENEMY HIT");
+            
             gameObject.SetActive(false);
 
             // if(isPlayer){
@@ -37,6 +41,11 @@ public class Attack : MonoBehaviour
             //     }
             //     Instantiate(hitFx, hitFxPos, Quaternion.identity);
             // }
+            if(isPlayer){
+                enemy.enemyHealth -= enemy.enemyDamage;
+            } else if (isEnemy){
+                player.playerHealth -= player.playerDamage;
+            }
         }
         
     }

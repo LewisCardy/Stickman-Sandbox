@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 219478682507370234}
   - component: {fileID: 8488384869568640891}
   - component: {fileID: 4989378854052395782}
+  - component: {fileID: 1438854642}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -39,7 +40,7 @@ Transform:
   m_Children:
   - {fileID: 543450652980826014}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1690413973959234909
 MeshFilter:
@@ -207,6 +208,24 @@ MonoBehaviour:
   throwPoint: {fileID: 7762327475446411615}
   cube: {fileID: 8278806569489773042, guid: f0c96c7f94b8b8c48aecdd6c0fae0665, type: 3}
   force: 20
+--- !u!114 &1438854642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066661947527159854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556cef6ac98cb3e47bd754f28f29274a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 100
+  enemyDamage: 10
+  playerHealthBar: {fileID: 0}
+  lightAttack: {fileID: 0}
+  heavyAttack: {fileID: 0}
+  kickAttack: {fileID: 0}
 --- !u!1001 &2411020790441703148
 PrefabInstance:
   m_ObjectHideFlags: 0
