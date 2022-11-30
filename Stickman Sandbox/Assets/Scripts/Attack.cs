@@ -42,9 +42,9 @@ public class Attack : MonoBehaviour
             //     Instantiate(hitFx, hitFxPos, Quaternion.identity);
             // }
             if(isPlayer){
-                enemy.enemyHealth -= enemy.enemyDamage;
+                enemy.enemyHealth -= player.playerDamage;
             } else if (isEnemy){
-                player.playerHealth -= player.playerDamage;
+                player.playerHealth -= enemy.enemyDamage;
             }
         }
         

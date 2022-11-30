@@ -13,8 +13,4 @@ public class PlayerHealthBar : MonoBehaviour
     public void SetPlayerHealth(float health){
         slider.value = health;
     }
-
-    public float checkPlayerHealth(){
-        return slider.value;
-    }
 }

@@ -14,8 +14,4 @@ public class EnemyHealthBar : MonoBehaviour
     public void SetEnemyHealth(float health){
         slider.value = health;
     }
-
-    public float checkEnemyHealth(){
-        return slider.value;
-    }
 }
