@@ -199,7 +199,9 @@ MonoBehaviour:
   enemyMaxHealth: 100
   enemyMinHealth: 0
   enemyDamage: 10
+  hasDied: 0
   enemySpawnPoint: {fileID: 0}
+  EnemyObject: {fileID: 2870524086251838981}
   enemyHealthBar: {fileID: 0}
 --- !u!1001 &3783063080241570315
 PrefabInstance:

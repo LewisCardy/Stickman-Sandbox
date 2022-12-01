@@ -14,6 +14,7 @@ public class Attack : MonoBehaviour
     public bool isPlayer, isEnemy;
 
     public GameObject hitFx;
+    public AudioSource hitSfx;
     private bool playerHit;
     private bool enemyHit;
 
@@ -30,17 +31,9 @@ public class Attack : MonoBehaviour
             
             gameObject.SetActive(false);
 
-            // if(isPlayer){
-            //     Vector3 hitFxPos = hit[0].transform.position;
-            //     hitFxPos.y += 1.3f;
+            Instantiate(hitFx, transform.position, Quaternion.identity);
+            hitSfx.PlayOneShot(hitSfx.clip);
 
-            //     if(hit[0].transform.forward.x > 0){
-            //         hitFxPos.x += 0.3f;
-            //     } else if(hit[0].transform.forward.x < 0){
-            //         hitFxPos.x -= 0.3f;
-            //     }
-            //     Instantiate(hitFx, hitFxPos, Quaternion.identity);
-            // }
             if(isPlayer){
                 enemy.enemyHealth -= player.playerDamage;
             } else if (isEnemy){

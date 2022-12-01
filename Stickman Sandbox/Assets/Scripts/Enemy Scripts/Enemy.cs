@@ -8,8 +8,9 @@ public class Enemy : MonoBehaviour
     public float enemyMaxHealth;
     public float enemyMinHealth = 0f;
     public float enemyDamage;
-    bool hasDied = false;
+    public bool hasDied = false;
     public Transform enemySpawnPoint;
+    public GameObject EnemyObject;
 
 
     public EnemyHealthBar enemyHealthBar;
@@ -20,6 +21,7 @@ public class Enemy : MonoBehaviour
         enemyHealthBar.SetEnemyHealth(enemyMaxHealth);
         SetRigidBodyState(true);
         SetColliderState(false);
+        hasDied = false;
         
     }
 
@@ -31,6 +33,7 @@ public class Enemy : MonoBehaviour
             enemyHealth = 0;
         }
         if (enemyHealth == 0){
+            hasDied = true;
             EnemyDeath();
         }
         Debug.Log(enemyHealth);
@@ -40,7 +43,7 @@ public class Enemy : MonoBehaviour
         GetComponent<Animator>().enabled = false;
         SetRigidBodyState(false);
         SetColliderState(true);
-        Destroy(gameObject, 2f);
+        StartCoroutine(EnemyRespawnDelay());
     }
 
     void SetRigidBodyState(bool state){
@@ -57,20 +60,20 @@ public class Enemy : MonoBehaviour
         }
         GetComponent<Collider>().enabled = !state;
     }
-    void EnemyRespawn(){
-        if(hasDied == true){
-            hasDied = false;
-            enemyMaxHealth = enemyMaxHealth * 0.25f;
-            enemyHealthBar.SetMaxEnemyHealth(enemyMaxHealth);
-            enemyHealth = enemyMaxHealth;
-            enemyDamage = enemyDamage * 0.25f;
-            GetComponent<Animator>().enabled = true;
-            SetColliderState(true);
-            SetRigidBodyState(false);
-        }
+    public void EnemyRespawn(){
+        enemyMaxHealth = enemyMaxHealth * 0.25f;
+        enemyHealthBar.SetMaxEnemyHealth(enemyMaxHealth);
+        enemyHealth = enemyMaxHealth;
+        enemyDamage = enemyDamage * 0.25f;
+        EnemyObject.GetComponent<Animator>().enabled = true;
+        SetColliderState(true);
+        SetRigidBodyState(false);
+        gameObject.transform.position = enemySpawnPoint.transform.position;
+        gameObject.SetActive(true);
     }
+    
     IEnumerator EnemyRespawnDelay(){
-        yield return new WaitForSeconds(2);
-        Instantiate(gameObject, enemySpawnPoint, true);
+        yield return new WaitForSeconds(2f);
+        gameObject.SetActive(false);
     }
 }
