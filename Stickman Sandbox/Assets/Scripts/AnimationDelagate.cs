@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class AnimationDelagate : MonoBehaviour
 {
+    //handles the creation of the attack points when the animation is played
 
     public GameObject leftArmAttackPoint, rightArmAttackPoint, footAttackPoint;
 
-    void Start(){
+    void Start(){ //deactivates attack points
         leftArmAttackPoint.SetActive(false);
         rightArmAttackPoint.SetActive(false);
         footAttackPoint.SetActive(false);
     }
 
+    //for each attack point turn it on when activated as part of the animation
     void leftArmAttackOn(){
         leftArmAttackPoint.SetActive(true);
     }

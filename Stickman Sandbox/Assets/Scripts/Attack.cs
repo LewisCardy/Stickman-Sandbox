@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+    //the attack script
     public Player player;
     public Enemy enemy;
 
@@ -23,21 +24,21 @@ public class Attack : MonoBehaviour
         DetectCollision();
     }
 
-    void DetectCollision(){
+    void DetectCollision(){ //the detection of collision
         //create a sphere at position on the collision layer
-        Collider[] hit = Physics.OverlapSphere(transform.position, radius, collisionLayer);
+        Collider[] hit = Physics.OverlapSphere(transform.position, radius, collisionLayer); //create a sphere at the attack point
 
-        if (hit.Length > 0){
+        if (hit.Length > 0){ //if theres a hit
             
-            gameObject.SetActive(false);
+            gameObject.SetActive(false); //deactivate the attack point
 
-            Instantiate(hitFx, transform.position, Quaternion.identity);
-            hitSfx.PlayOneShot(hitSfx.clip);
+            Instantiate(hitFx, transform.position, Quaternion.identity); //create the hit fx
+            hitSfx.PlayOneShot(hitSfx.clip); //play hit sound
 
-            if(isPlayer){
-                enemy.enemyHealth -= player.playerDamage;
-            } else if (isEnemy){
-                player.playerHealth -= enemy.enemyDamage;
+            if(isPlayer){ //if attack comes from player
+                enemy.enemyHealth -= player.playerDamage; //reduce enemy health by player damage
+            } else if (isEnemy){ //if attack comes from enemy
+                player.playerHealth -= enemy.enemyDamage; //reduce player health by enemy damage
             }
         }
         

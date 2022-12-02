@@ -15,7 +15,6 @@ public class PlayerAttackAnimation : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-
     // Update is called once per frame
     void Update()
     {
@@ -25,7 +24,7 @@ public class PlayerAttackAnimation : MonoBehaviour
 
     //checks for attack input
     void AttackInput(){
-        //when E is pressed
+        //when the key is pressed perform the corrisponding attack
         if (Input.GetKeyDown(KeyCode.J)){
             LightAttack();
         } else if (Input.GetKeyDown(KeyCode.K)){
@@ -36,6 +35,8 @@ public class PlayerAttackAnimation : MonoBehaviour
             Throw();
         }
     }
+
+    //animations for the attacks
     void LightAttack(){
         animator.SetTrigger("Jab");
     }

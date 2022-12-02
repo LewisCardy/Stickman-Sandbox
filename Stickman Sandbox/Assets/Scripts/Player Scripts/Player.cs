@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//the script for the player containing its health, damage and the states
 public class Player : MonoBehaviour
 {
     public GameManager gameManager;
@@ -23,10 +24,11 @@ public class Player : MonoBehaviour
     public GameObject enemySpawner;
     void Start()
     {
-        playerHealth = playerMaxHealth;
+        playerHealth = playerMaxHealth; 
+        //sets the max and current values of the healthbars
         playerHealthBar.SetMaxPlayerHealth(playerMaxHealth);
         playerHealthBar.SetPlayerHealth(playerMaxHealth);
-        Debug.Log(playerHealth);
+
         deathScreen.SetActive(false);
         enemySpawner.SetActive(false);
         enemyKillCount = 0;
@@ -36,24 +38,26 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerHealthBar.SetPlayerHealth(playerHealth);
-        if (playerHealth <= playerMinHealth){
+        playerHealthBar.SetPlayerHealth(playerHealth); //player healthbar values
+        if (playerHealth <= playerMinHealth){ //if the player goes below the minium make the health 0
             playerHealth = 0;
         }
-        if (playerHealth == 0){
+        if (playerHealth == 0){ //if the player dies show deathscreen and pause the game
             gameManager.PlayerDeath();
             deathScreen.SetActive(true);
         }
 
-        if (enemy.enemyHealth == 0){
+        if (enemy.enemyHealth == 0){ //if enemy dies
+            //activate the spawner and help text
             spawnInfo.SetActive(true);
             enemySpawner.SetActive(true);
-            if(!enemyKilled){
+
+            if(!enemyKilled){ //makes sure that the score only increses by 1 every kill
                 gameManager.Score();
                 enemyKilled = true;
             }
             
-        } else {
+        } else { //if the enemy is alive deactivate the spawner
             spawnInfo.SetActive(false);
             enemySpawner.SetActive(false);
             enemyKilled = false;
@@ -61,9 +65,9 @@ public class Player : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider collider){
+    void OnTriggerEnter(Collider collider){ //on trigger with the enemy spawn
         if(collider.tag == "EnemySpawn"){
-            enemy.EnemyRespawn();
+            enemy.EnemyRespawn(); //spawn another enemy
         }
     }
 

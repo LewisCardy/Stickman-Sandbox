@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//The player attack script
+//The enemy attack script
 public class EnemyAttack : MonoBehaviour
 {
     Animator animator;
@@ -12,7 +12,6 @@ public class EnemyAttack : MonoBehaviour
     private bool readyToAttack;
     private bool isAttacking;
 
-    // Start is called before the first frame update
     void Start()
     {
         //gets the animator component
@@ -20,22 +19,21 @@ public class EnemyAttack : MonoBehaviour
         readyToAttack = true;
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         //checks for attack input each frame
         AttackInput();
     }
 
-    //checks for attack input
+    //the enemy randomly attacks
     void AttackInput(){
-       int randomNumber = Random.Range(1, 4);
+        //picks a random number and depending on the number it will perform an attack
+       int randomNumber = Random.Range(1, 4); 
         if (randomNumber == 1 && readyToAttack){
             readyToAttack = false;
             isAttacking = true;
             LightAttack();
-            Invoke(nameof(ResetAttack), attackCooldown);
+            Invoke(nameof(ResetAttack), attackCooldown); //cooldown of the attack so that the enemy attacks every second
         } else if (randomNumber == 2 && readyToAttack){
             readyToAttack = false;
             isAttacking = true;
@@ -50,6 +48,7 @@ public class EnemyAttack : MonoBehaviour
         
 
     }
+    //animations for the various attacks
     void LightAttack(){
         animator.SetTrigger("Jab");
     }
@@ -60,10 +59,6 @@ public class EnemyAttack : MonoBehaviour
 
     void Kick(){
         animator.SetTrigger("Kick"); 
-    }
-
-    void Throw(){
-        animator.SetTrigger("Throw");
     }
     void ResetAttack(){
         readyToAttack = true;

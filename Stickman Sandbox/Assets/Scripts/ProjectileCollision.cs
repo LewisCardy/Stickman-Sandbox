@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ProjectileCollision : MonoBehaviour
 {
+    //when the throable cube hits an enemy
     public Enemy enemy;
     public float timer = 1.0f;
     float hit = 0.0f;
@@ -13,7 +14,6 @@ public class ProjectileCollision : MonoBehaviour
 
         if (collision.gameObject.layer == 9){ //if hits an enemy
             
-
             enemy.enemyHealth -= 50;
 
             if (hit >= 0.3 ){ //if colliding for a while
