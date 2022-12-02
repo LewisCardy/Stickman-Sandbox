@@ -13,7 +13,7 @@ public class Attack : MonoBehaviour
     public float damage = 2f;
 
     public bool isPlayer, isEnemy;
-
+    private GameObject effect;
     public GameObject hitFx;
     public AudioSource hitSfx;
     private bool playerHit;
@@ -32,7 +32,8 @@ public class Attack : MonoBehaviour
             
             gameObject.SetActive(false); //deactivate the attack point
 
-            Instantiate(hitFx, transform.position, Quaternion.identity); //create the hit fx
+            effect = Instantiate(hitFx, transform.position, Quaternion.identity); //create the hit fx
+            Destroy(effect, 0.3f);//delete hit after its played
             hitSfx.PlayOneShot(hitSfx.clip); //play hit sound
 
             if(isPlayer){ //if attack comes from player

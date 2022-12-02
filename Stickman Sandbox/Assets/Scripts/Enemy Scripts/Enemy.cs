@@ -56,10 +56,10 @@ public class Enemy : MonoBehaviour
     //the enemy respawn
     public void EnemyRespawn(){
         //when the enemy dies reset its health and damage with a 0.25 multiplier
-        enemyMaxHealth = enemyMaxHealth * 0.25f; 
+        enemyMaxHealth = enemyMaxHealth * 1.25f; 
         enemyHealthBar.SetMaxEnemyHealth(enemyMaxHealth);
         enemyHealth = enemyMaxHealth;
-        enemyDamage = enemyDamage * 0.25f;
+        enemyDamage = enemyDamage * 1.25f;
 
         //disable the ragdoll
         EnemyObject.GetComponent<Animator>().enabled = true;
