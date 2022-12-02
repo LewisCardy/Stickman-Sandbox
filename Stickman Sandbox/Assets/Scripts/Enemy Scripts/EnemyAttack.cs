@@ -6,11 +6,9 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     Animator animator;
-
-    private float time = 0.0f;
     public float attackCooldown = 1.0f;
     private bool readyToAttack;
-    private bool isAttacking;
+    //private bool isAttacking;
 
     void Start()
     {
@@ -31,17 +29,17 @@ public class EnemyAttack : MonoBehaviour
        int randomNumber = Random.Range(1, 4); 
         if (randomNumber == 1 && readyToAttack){
             readyToAttack = false;
-            isAttacking = true;
+            //isAttacking = true;
             LightAttack();
             Invoke(nameof(ResetAttack), attackCooldown); //cooldown of the attack so that the enemy attacks every second
         } else if (randomNumber == 2 && readyToAttack){
             readyToAttack = false;
-            isAttacking = true;
+            //isAttacking = true;
             HeavyAttack();
             Invoke(nameof(ResetAttack), attackCooldown);
         } else if (randomNumber == 3 && readyToAttack){
             readyToAttack = false;
-            isAttacking = true;
+            //isAttacking = true;
             Kick();
             Invoke(nameof(ResetAttack), attackCooldown);
         }

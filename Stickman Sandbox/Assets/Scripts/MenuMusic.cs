@@ -7,7 +7,7 @@ public class MenuMusic : MonoBehaviour
     //the menu music for the game carrying ovfer the object on scene change
     private void Update(){
         //if its not a menu delete the menu music
-        if (SceneManager.GetActiveScene().name == "Level White" || SceneManager.GetActiveScene().name == "Level Variation 1" || SceneManager.GetActiveScene().name == "Level Variation 2" || SceneManager.GetActiveScene().name == "Level Variation 3"){
+        if (SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level 3" || SceneManager.GetActiveScene().name == "Level 4"){
             Destroy(this.gameObject);
         } else {
             //dont destroy on menu

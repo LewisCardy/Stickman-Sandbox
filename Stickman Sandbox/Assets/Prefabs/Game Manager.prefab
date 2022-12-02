@@ -44,7 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225bbf75bc9ba854e9b304c36de41545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 0}
-  scoreText: {fileID: 0}
-  player: {fileID: 0}
+  timerText: {fileID: 5374399229021918570, guid: f5baedfdf3b17b7409a9bedfed157bb2,
+    type: 3}
+  scoreText: {fileID: 1699703914059456094, guid: 9d5d25550c8cd1942abeaa4dd59c1f30,
+    type: 3}
+  player: {fileID: 4419489767791830200, guid: 88b43da94a9cfc241ac8490b4256c3d2, type: 3}
+  pauseScreen: {fileID: 4613705033258503005, guid: 34f6e0ca07c3abe4fb3830b31467bce5,
+    type: 3}
+  resolutionDropdown: {fileID: 5056326193789260590, guid: 7f2e3694b8d1b244cb59766fc259587f,
+    type: 3}
+  audioMixer: {fileID: 24100000, guid: 038d5d9f8e74ce044aa29e8d2a1515c2, type: 2}
   score: 0

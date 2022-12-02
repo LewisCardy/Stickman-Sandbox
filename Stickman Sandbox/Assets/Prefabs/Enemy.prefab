@@ -39,7 +39,7 @@ Transform:
   m_Children:
   - {fileID: 9112627345862329750}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4498572234818087798
 MeshFilter:
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4bf97828d0a7e4c907172b09980d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1066661947527159854, guid: 94bc088271264d44b83b17a64de2faf9, type: 3}
+  player: {fileID: 0}
   speed: 5
 --- !u!114 &969476967
 MonoBehaviour:
@@ -542,6 +542,12 @@ PrefabInstance:
       objectReference: {fileID: 969476969}
     - target: {fileID: 5583360609946644406, guid: ee2b49b2059fa1c48a373b2fcd40f334,
         type: 3}
+      propertyPath: hitFx
+      value: 
+      objectReference: {fileID: 7738849022525400408, guid: 40fa011326cd7f94dbabb9ade06b3397,
+        type: 3}
+    - target: {fileID: 5583360609946644406, guid: ee2b49b2059fa1c48a373b2fcd40f334,
+        type: 3}
       propertyPath: isEnemy
       value: 1
       objectReference: {fileID: 0}
@@ -560,6 +566,12 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 969476969}
+    - target: {fileID: 5583360610867781798, guid: ee2b49b2059fa1c48a373b2fcd40f334,
+        type: 3}
+      propertyPath: hitFx
+      value: 
+      objectReference: {fileID: 7738849022525400408, guid: 40fa011326cd7f94dbabb9ade06b3397,
+        type: 3}
     - target: {fileID: 5583360610867781798, guid: ee2b49b2059fa1c48a373b2fcd40f334,
         type: 3}
       propertyPath: isEnemy
@@ -585,6 +597,12 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 969476969}
+    - target: {fileID: 5583360611420692422, guid: ee2b49b2059fa1c48a373b2fcd40f334,
+        type: 3}
+      propertyPath: hitFx
+      value: 
+      objectReference: {fileID: 7738849022525400408, guid: 40fa011326cd7f94dbabb9ade06b3397,
+        type: 3}
     - target: {fileID: 5583360611420692422, guid: ee2b49b2059fa1c48a373b2fcd40f334,
         type: 3}
       propertyPath: isEnemy

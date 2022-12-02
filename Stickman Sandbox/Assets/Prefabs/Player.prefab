@@ -40,7 +40,7 @@ Transform:
   m_Children:
   - {fileID: 543450652980826014}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1690413973959234909
 MeshFilter:
@@ -220,14 +220,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556cef6ac98cb3e47bd754f28f29274a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 3778611887649544067, guid: e30cfdd8f8883584e8073897341f93f2,
-    type: 3}
+  gameManager: {fileID: 0}
   deathScreen: {fileID: 0}
+  spawnInfo: {fileID: 0}
   playerHealth: 100
   playerMaxHealth: 100
   playerMinHealth: 0
   playerDamage: 100
+  enemyKillCount: 0
   playerHealthBar: {fileID: 0}
+  enemy: {fileID: 0}
+  enemySpawner: {fileID: 0}
 --- !u!1001 &2411020790441703148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -238,14 +241,32 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2411020790956540201, guid: 2a6600f480fd9094097eddba0f5949e5,
         type: 3}
+      propertyPath: hitFx
+      value: 
+      objectReference: {fileID: 7738849022525400408, guid: 40fa011326cd7f94dbabb9ade06b3397,
+        type: 3}
+    - target: {fileID: 2411020790956540201, guid: 2a6600f480fd9094097eddba0f5949e5,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1438854642}
     - target: {fileID: 2411020791241391689, guid: 2a6600f480fd9094097eddba0f5949e5,
         type: 3}
+      propertyPath: hitFx
+      value: 
+      objectReference: {fileID: 7738849022525400408, guid: 40fa011326cd7f94dbabb9ade06b3397,
+        type: 3}
+    - target: {fileID: 2411020791241391689, guid: 2a6600f480fd9094097eddba0f5949e5,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1438854642}
+    - target: {fileID: 2411020792171049305, guid: 2a6600f480fd9094097eddba0f5949e5,
+        type: 3}
+      propertyPath: hitFx
+      value: 
+      objectReference: {fileID: 7738849022525400408, guid: 40fa011326cd7f94dbabb9ade06b3397,
+        type: 3}
     - target: {fileID: 2411020792171049305, guid: 2a6600f480fd9094097eddba0f5949e5,
         type: 3}
       propertyPath: player

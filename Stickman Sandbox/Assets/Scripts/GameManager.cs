@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame(){ //restart the game after a certain time
         StartCoroutine(RestartScene());
+        Unpause();
     }
 
     public void EndGame(){
@@ -79,7 +80,7 @@ public class GameManager : MonoBehaviour
     IEnumerator RestartScene(){
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); //loads the same scene
-        Unpause();
+        
     }
 
     //the score of the game and at the top of the UI
